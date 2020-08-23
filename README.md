@@ -49,7 +49,7 @@ Fraqueza: cobre uma área pequena (centro), melhoraria se conseguissemos abrange
 # Grafo
 Nosso grafo é modelado da seguinte forma:
 
-bash
+     ```bash
      grafo = { "Rua carlota kemper" : {"Rua doutor joão silva pena" : 1, "Rua travessa costa pinto" : 2} ,
         "Rua firmino sales" : {"Rua praça doutor augusto silva" : 1, "Rua praça leonardo venerando pereira" : 1},
         "Rua santana" : {"Rua comendador josé esteves" : 4, "Rua desembargador alberto luz" : 1},
@@ -80,7 +80,7 @@ bash
         "Rua francisco de andrade" : {"Rua lourenço menucucci" : 1, "Rua doutor alvaro botelho" : 1},
         "Rua lourenço menucucci" : {"Rua francisco de andrade" : 1, "Rua doutor francisco sales" : 2},
         "Rua miceno de pádua" : {"Rua carlota kemper" : 1, "Rua travessa costa pinto" :1}}
- 
+        ```
 
 
 Rua : {Ruas interligadas: peso}
