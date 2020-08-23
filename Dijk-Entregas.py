@@ -1,9 +1,9 @@
 
-#A ideia do algoritmo é ajudar o usuario a escolher um restaurante que o atenda mais rapido,
-#para isso usamos o algoritimo de dijkstra para ver qual restaurante tem o menor caminho
-#até a casa do cliente e com isso podemos recomendar qual chegarar mais rapido.
+# A ideia do algoritmo é ajudar o usuario a escolher um restaurante que o atenda mais rapido,
+# para isso usamos o algoritimo de dijkstra para ver qual restaurante tem o menor caminho
+# até a casa do cliente e com isso podemos recomendar qual chegarar mais rapido.
 
-#
+# Criação do algorítimo de Dijkstra 
 def dijkstra(grafo,inicio,fim):
     menor_distancia = {}
     antecessor = {}
@@ -14,6 +14,7 @@ def dijkstra(grafo,inicio,fim):
         menor_distancia[noh] = infinito
     menor_distancia[inicio] = 0
  
+# Verificando se o nó ja foi visitado
     while naoVisitados:
         minNoh = None
         for noh in naoVisitados:
@@ -27,7 +28,7 @@ def dijkstra(grafo,inicio,fim):
                 menor_distancia[nohFilho] = peso + menor_distancia[minNoh]
                 antecessor[nohFilho] = minNoh
         naoVisitados.pop(minNoh)
- 
+ # Caminhando pelo grafo
     nohAtual = fim
     while nohAtual != inicio:
         try:
@@ -64,6 +65,7 @@ restauranteB = Restaurante("Subway", "a")
 restaurantes = [restauranteA, restauranteB]
 distancias = []
 
+# Main
 while 1:
     print("Bem vindo ao Dijk-Entregas \n")
     print("Escolha uma opção: ")
