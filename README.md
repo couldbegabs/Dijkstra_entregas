@@ -39,8 +39,12 @@ Main:
 fim.
 
 # Instâcia teste
-Rua santana : Restaurante Dallas Bar
+Rua santana : Restaurante Dallas Bar      
+
 Rua doutor alvaro botelho : Restaurante Picles Sabor e Prosa
+
+# Experimentos 
+
 
 # Forças e fraquezas
 Força: oferece uma rapidez e uma facilidade de forma simples
