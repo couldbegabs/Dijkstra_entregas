@@ -1,9 +1,8 @@
+# A ideia do algoritmo é ajudar o usuario a escolher um restaurante que o atenda mais rapido,
+# para isso usamos o algoritimo de dijkstra para ver qual restaurante tem o menor caminho
+# até a casa do cliente e com isso podemos recomendar qual chegarar mais rapido.
 
-#A ideia do algoritmo é ajudar o usuario a escolher um restaurante que o atenda mais rapido,
-#para isso usamos o algoritimo de dijkstra para ver qual restaurante tem o menor caminho
-#até a casa do cliente e com isso podemos recomendar qual chegarar mais rapido.
-
-#
+# Criação do algorítimo de Dijkstra 
 def dijkstra(grafo,inicio,fim):
     menor_distancia = {}
     antecessor = {}
@@ -14,6 +13,7 @@ def dijkstra(grafo,inicio,fim):
         menor_distancia[noh] = infinito
     menor_distancia[inicio] = 0
  
+ # Verificando se o nó ja foi visitado
     while naoVisitados:
         minNoh = None
         for noh in naoVisitados:
@@ -28,6 +28,7 @@ def dijkstra(grafo,inicio,fim):
                 antecessor[nohFilho] = minNoh
         naoVisitados.pop(minNoh)
  
+ # Caminhando pelo grafo
     nohAtual = fim
     while nohAtual != inicio:
         try:
@@ -41,16 +42,41 @@ def dijkstra(grafo,inicio,fim):
     if menor_distancia[fim] != infinito:
         return menor_distancia[fim]
         
+# Criação do grafo
+grafo = { "Rua carlota kemper" : {"Rua doutor joão silva pena" : 1, "Rua travessa costa pinto" : 2} ,
+        "Rua firmino sales" : {"Rua praça doutor augusto silva" : 1, "Rua praça leonardo venerando pereira" : 1},
+        "Rua santana" : {"Rua comendador josé esteves" : 4, "Rua desembargador alberto luz" : 1},
+        "Rua barão do rio branco" : {"Rua praça doutor augusto silva" : 6, "Rua santana" : 1 },
+        "Rua doutor joão silva pena" : {"Rua travessa costa pinto" : 1, "Rua miceno de pádua" : 1},
+        "Rua cincinato de paulo" : {"Rua getulio vargas" : 1, "Rua raul soares" : 2},
+        "Rua getulio vargas" : {"Rua raul soares" : 1, "Rua comendador josé esteves" : 3},
+        "Rua benedito valadares" : {"Rua praça dona josefina" : 2, "Rua praça doutor augusto silva" : 3},
+        "Rua praça doutor augusto silva" : {"Rua firmino sales" : 1, "Rua miceno de pádua" : 1},
+        "Rua praça leonardo venerando pereira" : {"Rua travessa costa pinto" : 1, "Rua miceno de pádua" : 2},
+        "Rua travessa guadalupe" : {"Rua firmino sales" : 1},
+        "Rua beco vila helena" : {"Rua comendador josé esteves" : 1},
+        "Rua raul soares" : {"Rua benedito valadares" : 3, "Rua dona inacia" : 1},
+        "Rua dona inacia" : {"Rua santana" : 2, "Rua comendador josé esteves" : 1},
+        "Rua venerando pareira" : {"Rua miceno de pádua" : 1, "Rua carlota kemper" : 1},
+        "Rua desembargador alberto luz" : {"Rua santana": 1, "Rua raul soares" : 1},
+        "Rua comendador josé esteves" : {"Rua praça doutor augusto silva": 1, "Rua benedito valadares" : 1},
+        "Rua travessa costa pinto" : {"Rua praça doutor augusto silva" : 1, "Rua miceno de pádua" : 1} ,
+        "Rua bernadino macieira" : {"Rua desembargador alberto luz" : 1},
+        "Rua praça dona josefina" : {"Rua raul soares" : 1, "Rua santana" : 1},
+        "Rua monsenhor aureliano" : {"Rua miceno de pádua" : 1, "Rua praça doutor augusto silva" : 2},
+        "Rua doutor francisco sales" : {"Rua praça leonardo venerando pereira" : 1, "Rua miceno de pádua" : 1},
+        "Rua barbosa lima" : {"Rua doutor francisco sales" : 1, "Rua miceno de pádua" : 1},
+        "Rua professor azarias ribeiro" : {"Rua doutor francisco sales" : 1, "Rua miceno de pádua" : 1},
+        "Rua joão modesto" : {"Rua miceno de pádua" : 1, "Rua francisco andrade" : 1},
+        "Rua francisco andrade" : {"Rua doutor francisco sales" : 1, "Rua doutor alvaro botelho" : 1},
+        "Rua doutor alvaro botelho" : {"Rua doutor francisco sales" : 1, "Rua francisco de andrade" : 1},
+        "Rua francisco de andrade" : {"Rua lourenço menucucci" : 1, "Rua doutor alvaro botelho" : 1},
+        "Rua lourenço menucucci" : {"Rua francisco de andrade" : 1, "Rua doutor francisco sales" : 2},
+        "Rua miceno de pádua" : {"Rua carlota kemper" : 1, "Rua travessa costa pinto" :1}}
 
-grafo = {'a':{'b':10,'c':3},
-         'b':{'c':1,'d':2},
-         'c':{'b':4,'d':8,
-         'e':2},'d':{'e':7},
-         'e':{'d':9}}
 
 
-
-#Classe usada para cadastrar representar um  restaurante 
+# Classe usada para cadastrar representar um  restaurante 
 class Restaurante:
     def __init__(self, nome, endereco):
         self.nome = nome
@@ -58,12 +84,21 @@ class Restaurante:
 
 
 
-restauranteA = Restaurante("Robinho", "b")
-restauranteB = Restaurante("Subway", "a")
+restauranteA = Restaurante("Robinho", "Rua miceno de pádua")
+restauranteB = Restaurante("Subway", "Rua barão do rio branco")
+restauranteC = Restaurante("Restaurante Tropeiro Grill", "Rua praça doutor augusto silva")
+restauranteD = Restaurante("Restaurante Manah", "Rua comendador josé esteves")
+restauranteE = Restaurante("Restaurante Dallas Bar", "Rua santana")
+restauranteF = Restaurante("Restaurante Picles Sabor e Prosa", "Rua doutor alvaro botelho")
+restauranteG = Restaurante("Restaurante Sabor Mineiro", "Rua professor azarias ribeiro")
+restauranteH = Restaurante("Restaurante Central", "Rua doutor francisco sales")
+
+
 
 restaurantes = [restauranteA, restauranteB]
 distancias = []
 
+# Main
 while 1:
     print("Bem vindo ao Dijk-Entregas \n")
     print("Escolha uma opção: ")
@@ -91,15 +126,6 @@ while 1:
         restaurantes.append(restaurante)
     elif opcao == "3":
         break
-
-
-
-
-
-
-
-
-
 
 
 
