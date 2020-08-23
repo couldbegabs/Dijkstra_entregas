@@ -16,7 +16,8 @@ mais devido a falta de tempo e desistencia de membro do grupo fizemos algo mais 
 Para implementação usamos o algoritmo dijkstra para escolher a menor distancia da rua do restaurante
 até a rua do cliente e depois verificamos qual restaurante consegue atender em menor tempo. 
 Foi escolhido o algorítimo de Dijkstra pois este algoritmo é capaz de determinar o caminho mínimo,
-partindo de um vértice de início para todos os outros vértices do grafo, que neste caso é a casa do cliente.
+partindo de um vértice de início para todos os outros vértices do grafo, que neste caso é a casa do cliente, 
+porém modificamos para ser um grafo não direcionado.
 
 # Algorítimo
 Primeiramente é criado o Dijkstra:
@@ -49,7 +50,7 @@ Fraqueza: cobre uma área pequena (centro), melhoraria se conseguissemos abrange
 # Grafo
 Nosso grafo é modelado da seguinte forma:
 
-     ```bash
+```bash
      grafo = { "Rua carlota kemper" : {"Rua doutor joão silva pena" : 1, "Rua travessa costa pinto" : 2} ,
         "Rua firmino sales" : {"Rua praça doutor augusto silva" : 1, "Rua praça leonardo venerando pereira" : 1},
         "Rua santana" : {"Rua comendador josé esteves" : 4, "Rua desembargador alberto luz" : 1},
@@ -80,7 +81,14 @@ Nosso grafo é modelado da seguinte forma:
         "Rua francisco de andrade" : {"Rua lourenço menucucci" : 1, "Rua doutor alvaro botelho" : 1},
         "Rua lourenço menucucci" : {"Rua francisco de andrade" : 1, "Rua doutor francisco sales" : 2},
         "Rua miceno de pádua" : {"Rua carlota kemper" : 1, "Rua travessa costa pinto" :1}}
-        ```
+``` 
 
 
 Rua : {Ruas interligadas: peso}
+
+# Conclusão
+A abordagem com Dijkstra foi uma experiência interessante, tendo apenas que modificar para que o grafo fosse 
+não direcionado, porém de uma maneira simples. Uma possível continuação do nosso estudo seria a expansão 
+para, pelo menos, a cidade toda e adicionar uma quantidade maior e mais atualizada dos restaurantes lavrenses.
+
+
