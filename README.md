@@ -38,13 +38,13 @@ Main:
           para sair
 fim.
 
-# Instâcia teste
+# Instância teste
 Rua santana : Restaurante Dallas Bar
-Rua doutor alvaro botelho : Restaurante Picles Sabor e Prosa
+
 
 # Forças e fraquezas
 Força: oferece uma rapidez e uma facilidade de forma simples
-Fraqueza: cobre uma área pequena (centro), melhoraria se conseguissemos abranger a cidade inteira.
+Fraqueza: cobre uma área pequena (centro), melhoraria se conseguíssemos abranger a cidade inteira.
 
 # Grafo
 Nosso grafo é modelado da seguinte forma:
