@@ -89,3 +89,7 @@ Rua : {Ruas interligadas: peso}
 A abordagem com Dijkstra foi uma experiência interessante, tendo apenas que modificar para que o grafo fosse 
 não direcionado, porém de uma maneira simples. Uma possível continuação do nosso estudo seria a expansão 
 para, pelo menos, a cidade toda e adicionar uma quantidade maior e mais atualizada dos restaurantes lavrenses.
+
+# Testes
+
+![Imagem de teste](https://ibb.co/7R00K6g)
